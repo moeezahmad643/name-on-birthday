@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World</title>
+    <style>
+        * {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #212121;
+        }
+
+        .box {
+            height: 500px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(255, 255, 255);
+            margin: 35px auto;
+            background-color: #535353;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .form-control {
+            position: relative;
+            margin: 20px 0 40px;
+            width: 190px;
+        }
+
+        .form-control input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 2px #fff solid;
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .form-control input:focus,
+        .form-control input:valid {
+            outline: 0;
+            border-bottom-color: white;
+        }
+
+        .form-control label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .form-control label span {
+            display: inline-block;
+            font-size: 18px;
+            min-width: 5px;
+            color: #fff;
+            transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .form-control input:focus+label span,
+        .form-control input:valid+label span {
+            color: white;
+            transform: translateY(-30px);
+        }
+
+        .button {
+            padding: 1em 2em;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #535353;
+            transition: all 1000ms;
+            font-size: 15px;
+            position: relative;
+            overflow: hidden;
+            outline: 2px solid white;
+        }
+
+        button:hover {
+            color: white;
+            transform: scale(1.1);
+            outline: 2px solid white;
+            box-shadow: 4px 5px 17px -4px #ffff;
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #535353;
+            transform: skewX(45deg);
+            z-index: -1;
+            transition: width 1000ms;
+        }
+
+        button:hover::before {
+            width: 250%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form method="post" id="form">
+        <div class="box">
+
+            <h3>Create a Card for Birthday</h3>
+
+            <div class="form-control">
+                <input type="text" required name="name">
+                <label>
+                    <span style="transition-delay:0ms">B</span><span style="transition-delay:50ms">o</span><span
+                        style="transition-delay:100ms">y</span><span style="transition-delay:150ms"> </span><span
+                        style="transition-delay:200ms">N</span><span style="transition-delay:250ms">a</span><span
+                        style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
+                </label>
+            </div>
+
+            <div class="form-control">
+                <input type="text" required name="quote">
+                <label>
+                    <span style="transition-delay:0ms">W</span><span style="transition-delay:50ms">i</span><span
+                        style="transition-delay:100ms">s</span><span style="transition-delay:150ms">h</span><span
+                        style="transition-delay:200ms">i</span><span style="transition-delay:250ms">n</span><span
+                        style="transition-delay:200ms">g</span><span style="transition-delay:250ms"> </span><span
+                        style="transition-delay:200ms">Q</span><span style="transition-delay:250ms">u</span><span
+                        style="transition-delay:300ms">o</span><span style="transition-delay:350ms">t</span><span
+                        style="transition-delay:350ms">e</span>
+                </label>
+            </div>
+
+            <div class="form-control">
+                <input type="text" required name="sendername">
+                <label>
+                    <span style="transition-delay:0ms">S</span><span style="transition-delay:50ms">e</span><span
+                        style="transition-delay:100ms">n</span><span style="transition-delay:150ms">d</span><span
+                        style="transition-delay:200ms">e</span><span style="transition-delay:250ms">r</span><span
+                        style="transition-delay:300ms"> </span><span style="transition-delay:350ms">N</span><span
+                        style="transition-delay:300ms">a</span><span style="transition-delay:350ms">m</span><span
+                        style="transition-delay:300ms">e</span>
+                </label>
+            </div>
+
+            <input id="submit" type="submit" class="button" value='Create Card'>
+        </div>
+    </form>
+
+
+</body>
+
+<!-- <script>
+    let form = document.getElementById('form')
+
+    document.getElementById('submit').addEventListener('click', (event) => {
+        event.preventDefault()
+        document.getElementById('form').submit()
+
+    })
+</script> -->
+
+</html>
